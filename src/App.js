@@ -11,7 +11,7 @@ import Footer from './Components/Footer';
 
 function App() {
   return (
-    <HashRouter>
+    <HashRouter basename='/'>
      <Navbar/>
      <Switch>
        <Route  exact path="/" component={Home}/>
