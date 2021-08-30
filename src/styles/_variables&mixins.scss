@@ -1,0 +1,56 @@
+
+/* defining variables */
+$primary-font:Arial, Helvetica, sans-serif;
+$secondary-font:'Nunito', sans-serif;
+$primary-color:#1e1e1e;
+$secondary-color:#1a73e8;
+
+/* defining mixins */
+@mixin btn {
+    border:none;
+    outline:none;
+    border:solid 2px $secondary-color;
+    background-color:#fff;
+    color:$secondary-color;
+    text-transform:uppercase;
+    transition:all 0.5s ease-in-out;
+    cursor:pointer;
+    &:hover {
+        background-color: $secondary-color;
+        color:#fff;
+    }
+
+}
+
+@mixin boxShadow {
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+
+/*mixins for media query */
+
+@mixin phoneMediaQuery {
+    @media screen and (max-width:700px) {
+        @content;
+    }
+}
+
+@mixin tabletMediaQuery {
+    @media screen and (max-width:1024px) {
+        @content;
+    }
+}
+
+@mixin animation {
+
+    
+    @keyframes slideRight{
+        0%{
+          transform: translateX(2000px);
+        }
+        100%{
+          
+        }
+      }
+
+      animation:slideRight 2s ease;
+} 

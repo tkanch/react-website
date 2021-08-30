@@ -1,0 +1,150 @@
+
+
+/* styles for nav */
+
+nav {
+    display:flex;
+    padding:15px 50px;
+    align-items:center;
+    justify-content:space-between;
+    background-color:white;
+    transition:all 1s ease;
+    div.logo a{
+        color:$primary-color;
+        font-size:1.6rem;
+        text-decoration:none;
+        span.brand {
+            color:$secondary-color;
+            margin-left:5px;
+            text-transform:uppercase;
+        }
+    }
+
+    div.toggleBtn {
+        cursor:pointer;
+        font-size:1.5rem;
+        transition:all 1s ease-in-out;
+        display:none;
+        .fa-bars {
+            transition:all 1s ease;
+            &:hover {
+                
+                transform: rotate(90deg);
+                
+            }
+        }
+        .fa-times {
+            transition:all 0.5s ease;
+            &:hover {
+                
+                transform: rotate(120deg);
+            }
+        }
+    }
+
+    div.links {
+        ul {
+            list-style-type:none;
+            display:flex;
+
+
+         a {
+             color:$primary-color;
+             text-decoration:none;
+             text-transform: capitalize;
+             margin:0px 20px;
+             padding-bottom:5px;
+
+             &:hover {
+                 color:$secondary-color;
+             }
+         }
+
+         .active {
+             border-bottom:2px solid $primary-color;
+         }
+
+         
+        }
+    }
+
+    
+
+}
+
+/* classes for navbar to become sticky and get border when scrolled */
+.scroll-on {
+    position:fixed;
+    top:0;
+    width:100%;
+    box-shadow:0 3px 5px rgba(0, 0, 0, 0.3);
+    
+}
+
+
+@include phoneMediaQuery {
+    nav {
+        
+       div.links {
+           background-color:rgba(0,0,0,0.9);
+           transition:all 1s ease;
+           position:absolute;
+           top:0;
+           left:-1000px;
+           height:100vh;
+           width:80%;
+           z-index:50;  
+           ul {
+            flex-direction:column;
+            margin-top:50px;
+            li {
+                margin:20px 30px;
+                
+            a{
+                color:white;
+            }
+        }
+        }
+       }
+        
+        
+
+        div.open {
+                left:0px;
+               
+        }
+
+       
+
+        div.toggleBtn {
+            display:block;
+            z-index:99;
+
+            .fa-times {
+                position:absolute;
+                color:white;
+                left:70%;
+            }
+            
+        }
+
+        div.logo a{
+            font-size:1rem;
+            
+        }
+        
+    }
+
+    
+}
+
+@include tabletMediaQuery {
+    nav {
+        padding:20px;
+
+        div.logo a{
+            font-size:1.3rem;
+            
+        }
+    }
+}

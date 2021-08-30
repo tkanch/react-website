@@ -1,0 +1,14 @@
+/* style for footer */
+
+footer {
+    padding:12px;
+    background-color:lightgrey;
+    text-align:center;
+    color:$primary-color;
+    font-size:14px;
+    
+
+    span {
+        color:$secondary-color;
+    }
+}

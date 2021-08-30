@@ -1,0 +1,120 @@
+/* styles for Header */
+
+header {
+    width:80%;
+    margin:50px auto;
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    grid-template-rows:80vh;
+
+    section.text {
+        display:flex;
+        flex-direction:column;
+        align-items:flex-start;
+        justify-content:center;
+        
+
+        h1 {
+            font-family:$secondary-font;
+            font-size:2.5rem;
+            margin-bottom:20px;
+            
+            strong {
+                display:block;
+                color:$secondary-color;
+                font-weight:300;
+            }
+        }
+
+        h2 {
+            font-family: $primary-font;
+            font-size:1.1rem;
+            margin-bottom:50px;
+            text-transform:uppercase;
+            font-weight:300;
+        }
+
+        button {
+            @include btn;
+            border-radius:50px;
+            padding:10px 30px;
+        }
+
+      
+    }
+
+    
+    section.image {
+        display:flex;
+        align-items:flex-end;
+        @include animation;
+        img {
+            width:100%;
+            height:100%;
+            object-fit:cover;
+        }
+    }
+    
+}
+
+
+/* styles fot tablet */
+@include tabletMediaQuery {
+    header {
+        width:90%;
+        margin:30px auto;
+        grid-template-rows:60vh;
+        grid-template-columns:1fr;
+        grid-gap:20px;
+        section.text {
+            text-align:center;
+            order:2;
+            align-items:center;
+
+            h1 {
+                font-size:2.2rem;
+            }
+
+            h2 {
+                font-size:1.1rem;
+            }
+        }
+
+        section.image {
+            order:1;
+            
+        }
+    }
+}
+
+/* styles for phone */
+@include phoneMediaQuery {
+   
+    header{
+        
+        width:90%;
+        margin:20px auto;
+        grid-template-rows:60vh;
+        grid-template-columns:1fr;
+        grid-gap:20px;
+        section.text {
+            text-align:center;
+            order:2;
+            align-items:center;
+
+            h1 {
+                font-size:2rem;
+            }
+
+            h2 {
+                font-size:1rem;
+            }
+        }
+
+        section.image {
+            order:1;
+            
+        }
+    }
+}
+
